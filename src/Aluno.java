@@ -1,10 +1,11 @@
-public class Aluno {
+public class Aluno extends Usuario {
+
     private String nome;
     private String matricula;
     private String curso ;
 
     public Aluno(String nome, String matricula, String curso) {
-        this.nome = nome;
+        super(nome, login, senha);
         this.matricula = matricula;
         this.curso = curso;
     }
@@ -15,5 +16,10 @@ public class Aluno {
 
     public void exibirInfo(){
         System.out.println("Aluno: " + nome + " | Mátricula: " + matricula + " | Curso: " + (curso !=null ? curso : "-"));
+    }
+
+    @Override
+    public boolean autenticar(String login, String senha){
+        return this.login.equals(login) && this.senha.equals(senha);
     }
 }

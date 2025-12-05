@@ -1,4 +1,6 @@
-public class Professor {
+import javax.swing.plaf.PanelUI;
+
+public class Professor extends Usuario {
     private String nome;
     private String especialidade;
     private String  registro;
@@ -15,6 +17,10 @@ public class Professor {
 
     public void exibirInfo(){
         System.out.println("Professor: " + nome + " | Especialidade: " + especialidade + " | Registro: " + registro);
+    }
 
+    @Override
+    public boolean autenticar(String login, String senha) {
+        return this.login.equals(login) && this.senha.equals(senha);
     }
 }

@@ -8,6 +8,13 @@ public class Main {
         Curso c1 = new Curso("Engenharia de Software", "EG-01", 120);
 
         Turma t1 = new Turma("T01", p1,c1);
+        Administrador adm = new Administrador("Helena", "adm01", "2707");
+
+        if (adm.autenticar("adm01", "2707")){
+            System.out.println("Login realizado com sucesso!");
+        } else {
+            System.out.println("Falha na autenticação!");
+        }
 
         t1.adicionarAluno(a1);
 
